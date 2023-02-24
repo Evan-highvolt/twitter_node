@@ -1,4 +1,5 @@
 const { createNewTweet, findAllTweets } = require('../queries/tweet.queries');
+
 exports.createTweet = async (req, res, next) => {
     try {
         const body = req.body;
