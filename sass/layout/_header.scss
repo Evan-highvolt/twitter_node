@@ -1,0 +1,19 @@
+.top-bar {
+    width: 100%;
+    box-shadow: $box-shadow;
+
+    @include flex($justify: space-around);
+
+    @include xl {
+        padding: 0 2rem;
+        @include flex($justify: space-between)
+    }
+
+    ul {
+        @include flex;
+        
+        a {
+            margin-left: 1rem;
+        }
+    }
+}

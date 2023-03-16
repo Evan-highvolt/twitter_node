@@ -1,0 +1,20 @@
+.tweet-card 
+    .tweet-card-author
+        .tweet-card-author-data
+            img(src=tweet.author.avatar, alt="")
+            a(href=`/user/${tweet.author.username}`)
+                p @#{tweet.author.username}
+        if currentUser 
+            if tweet.author._id.toString() === currentUser._id.toString()
+                .tweet-card-author-actions 
+                    a(href=`/tweet/edit/${tweet._id}`) 
+                        i.fa-solid.fa-pen-to-square
+                    a(href=`/tweet/delete/${tweet._id}`) 
+                        i.fa-solid.fa-xmark
+            
+
+    .tweet-card-body= tweet.content
+    .tweet-card-actions 
+        i.fa-regular.fa-comment 
+        i.fa-regular.fa-heart
+        i.fa-regular.fa-share-from-square

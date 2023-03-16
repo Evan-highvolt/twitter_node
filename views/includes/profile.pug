@@ -1,0 +1,25 @@
+if isAuthenticated
+    script(src="/js/upload-image.js")
+    .profile
+        .profile-img
+            form(
+                id="form-container"
+                action="/user/update/image"
+                method="post"
+                enctype="multipart/form-data"
+            )
+                input(type="file", name="avatar" id="avatar" style="display: none")
+                img#profile-image(src=currentUser.avatar, alt="")
+        .profile-info
+            h3 @#{currentUser.username}
+            p #{currentUser.firstname} #{currentUser.lastname}
+        .profile-data 
+            .profile-data-posts
+                p Posts
+                p 5
+            .profile-data-followers 
+                p Followers 
+                p= currentUser.followers.length
+            .profile-data-following 
+                p Following 
+                p= currentUser.following.length

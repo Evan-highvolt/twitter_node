@@ -1,0 +1,12 @@
+form(class="form-new" action= tweet ? `/tweet/edit/${tweet._id}` : '/tweet/new' method="post")
+    .form-title
+        h4= tweet ? "Modifier le Tweet" : "Ecrire un Tweet" 
+    .form-body 
+        .form-item 
+            textarea(name="content" placeholder="Quoi de neuf aujourd'hui ?")= tweet ? tweet.content : ""
+        if errors 
+            ul
+                each error in errors 
+                    li(class="text-danger")= error
+        .form-item 
+            input(type="submit", value= tweet ? "Update" : "Tweeter" class="btn btn-primary")

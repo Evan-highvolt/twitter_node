@@ -1,0 +1,27 @@
+.tweets-container {
+    width: 100%;
+    @include flex;
+
+    .tweets-list {
+        width: 100%;
+        margin-bottom: 6rem;
+        @include flex($direction: column);
+
+        @include sm {
+            width: 80%;
+        }
+
+        @include md {
+            width: 70%;
+        }
+
+        @include lg {
+            width: 50%;
+            margin-left: 20rem;
+        }
+
+        @include xl {
+            width: 30%;
+        }
+    }
+}
