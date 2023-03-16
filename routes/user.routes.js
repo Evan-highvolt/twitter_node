@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { ensureAuthenticated } = require('../config/security.config.js');
-const {signup, signupForm, uploadImage, displayProfile, userList, followers, unfollowers} = require('../controllers/user.controller.js');
+const {signup, signupForm, uploadImage, displayProfile, userList, followUser, unFollowUser} = require('../controllers/user.controller.js');
 
 // routes pour inscrire un utilisateur
 router.get('/', ensureAuthenticated, userList);
