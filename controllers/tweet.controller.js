@@ -49,7 +49,7 @@ exports.deleteTweet = async (req, res, next) => {
     }
 }
 
-exports.displayTweet = async (req, res, next) => {
+exports.editTweet = async (req, res, next) => {
     try {
         const tweetId = req.params.tweetId;
         const tweet = await findTweetById(tweetId);
@@ -69,6 +69,16 @@ exports.updateTweet = async (req, res, next) => {
         const body = req.body;
         await findTweetAndUpdate(tweetId, body);
         res.redirect('/')
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.showTweet = async (req, res, next) => {
+    try {
+        const tweetId = req.params.tweetId;
+        const tweet = await findTweetById(tweetId)
+        res.render('tweets/tweet-show', {tweet,comment: tweet.comments , isAuthenticated: req.isAuthenticated(), currentUser: req,user})
     } catch (error) {
         next(error)
     }

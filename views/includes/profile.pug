@@ -23,3 +23,8 @@ if isAuthenticated
             .profile-data-following 
                 p Following 
                 p= currentUser.following.length
+            .profile-actions
+                fa-solid.fa-users
+                fa-solid.fa-message    
+                a(href="/auth/signout")
+                    i.fa-solid.fa-right-from-bracket
