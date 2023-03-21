@@ -54,6 +54,13 @@
         padding-top: 2rem;
         border-top: 1px solid #ddd;
 
-        @include flex($justify: space-around)
+        @include flex($justify: space-around);
+
+        i {
+            &:hover {
+                cursor: pointer;
+                color: $primary-color;
+            }
+        }
     }
 }

@@ -7,6 +7,8 @@ require('./database');
 
 const app = express();
 exports.app = app;
+app.locals.moment = require('moment');
+
 const PORT = process.env.PORT || 4000;
 
 app.set('views', path.join(__dirname, 'views'));
